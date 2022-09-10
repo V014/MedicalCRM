@@ -38,19 +38,19 @@
             this.lbl_forum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_dashboard = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_patients = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_welcome = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_messages = new System.Windows.Forms.Label();
             this.label_messages_title = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_welcome = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel_appointments.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_dashboard.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_appointments
@@ -152,6 +152,7 @@
             // panel_dashboard
             // 
             this.panel_dashboard.AutoScroll = true;
+            this.panel_dashboard.BackColor = System.Drawing.Color.Transparent;
             this.panel_dashboard.Controls.Add(this.panel4);
             this.panel_dashboard.Controls.Add(this.panel_appointments);
             this.panel_dashboard.Controls.Add(this.panel1);
@@ -162,6 +163,50 @@
             this.panel_dashboard.Name = "panel_dashboard";
             this.panel_dashboard.Size = new System.Drawing.Size(741, 400);
             this.panel_dashboard.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel4.Controls.Add(this.lbl_patients);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.lbl_welcome);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(486, 180);
+            this.panel4.TabIndex = 1;
+            // 
+            // lbl_patients
+            // 
+            this.lbl_patients.AutoSize = true;
+            this.lbl_patients.Font = new System.Drawing.Font("Roboto", 26F);
+            this.lbl_patients.ForeColor = System.Drawing.Color.White;
+            this.lbl_patients.Location = new System.Drawing.Point(10, 96);
+            this.lbl_patients.Name = "lbl_patients";
+            this.lbl_patients.Size = new System.Drawing.Size(38, 42);
+            this.lbl_patients.TabIndex = 0;
+            this.lbl_patients.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 8F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(14, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(341, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "This is the total amount of customers we have assisted this year : ";
+            // 
+            // lbl_welcome
+            // 
+            this.lbl_welcome.AutoSize = true;
+            this.lbl_welcome.Font = new System.Drawing.Font("Roboto", 16F);
+            this.lbl_welcome.ForeColor = System.Drawing.Color.White;
+            this.lbl_welcome.Location = new System.Drawing.Point(10, 13);
+            this.lbl_welcome.Name = "lbl_welcome";
+            this.lbl_welcome.Size = new System.Drawing.Size(290, 27);
+            this.lbl_welcome.TabIndex = 0;
+            this.lbl_welcome.Text = "Welcome, Profession. Name";
             // 
             // panel3
             // 
@@ -195,55 +240,11 @@
             this.label_messages_title.TabIndex = 0;
             this.label_messages_title.Text = "Messages";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.lbl_welcome);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(486, 180);
-            this.panel4.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 26F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "0";
-            // 
-            // lbl_welcome
-            // 
-            this.lbl_welcome.AutoSize = true;
-            this.lbl_welcome.Font = new System.Drawing.Font("Roboto", 16F);
-            this.lbl_welcome.ForeColor = System.Drawing.Color.White;
-            this.lbl_welcome.Location = new System.Drawing.Point(10, 13);
-            this.lbl_welcome.Name = "lbl_welcome";
-            this.lbl_welcome.Size = new System.Drawing.Size(290, 27);
-            this.lbl_welcome.TabIndex = 0;
-            this.lbl_welcome.Text = "Welcome, Profession. Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 8F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(14, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(341, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "This is the total amount of customers we have assisted this year : ";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel_dashboard);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(741, 400);
@@ -254,10 +255,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_dashboard.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -278,7 +279,7 @@
         public System.Windows.Forms.Label lbl_forum;
         public System.Windows.Forms.Label label_messages;
         private System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lbl_patients;
         private System.Windows.Forms.Label lbl_welcome;
         private System.Windows.Forms.Label label3;
     }

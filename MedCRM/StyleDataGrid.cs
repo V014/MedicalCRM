@@ -15,8 +15,13 @@ namespace MedCRM
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGrid.RowHeadersVisible = false;
+            dataGrid.AllowUserToAddRows = false;
+            dataGrid.AllowUserToDeleteRows = false;
+            dataGrid.AllowUserToResizeRows = false;
+            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToOrderColumns = false;
 
             dataGrid.BackgroundColor = Color.FromArgb(17, 17, 17);
             dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
@@ -32,9 +37,9 @@ namespace MedCRM
             dataGrid.ColumnHeadersHeight = 30;
             dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 9);
-            dataGrid.DefaultCellStyle.Font = new Font("Roboto", 8);
-            dataGrid.AlternatingRowsDefaultCellStyle.Font = new Font("Roboto", 8);
+            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 10);
+            dataGrid.DefaultCellStyle.Font = new Font("Roboto", 9);
+            dataGrid.AlternatingRowsDefaultCellStyle.Font = new Font("Roboto", 9);
 
         }
     }

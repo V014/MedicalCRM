@@ -12,7 +12,6 @@ namespace MedCRM
         Reminders reminders = new Reminders();
         Messages messages = new Messages();
         countNotifications countNotifications = new countNotifications();
-        patientRegistration patientRegistration = new patientRegistration();
         Forum forum = new Forum();
         StyleDataGrid stye = new StyleDataGrid();
         public Home()
@@ -26,6 +25,7 @@ namespace MedCRM
             dashboard.lbl_appointments.Text = countNotifications.countAppointments();
             dashboard.lbl_reminders.Text = countNotifications.countReminders();
             dashboard.lbl_forum.Text = countNotifications.countForum();
+            dashboard.lbl_patients.Text = countNotifications.countPatients();
         }
         // loads home
         void loadHome()
@@ -37,13 +37,20 @@ namespace MedCRM
             dashboard.Show();
         }
         // loads patients
-        public void loadPatients()
+        private void loadPatients()
         {
             this.panel_main.Controls.Clear();
             this.panel_main.Controls.Add(patients);
             patients.Dock = DockStyle.Fill;
             patients.Show();
             con.LoadData("SELECT * FROM patients", patients.data_patients);
+            patients.data_patients.Columns[2].Visible = false;
+            patients.data_patients.Columns[3].Visible = false;
+            patients.data_patients.Columns[4].Visible = false;
+            patients.data_patients.Columns[5].Visible = false;
+            patients.data_patients.Columns[6].Visible = false;
+            patients.data_patients.Columns[7].Visible = false;
+            patients.data_patients.Columns[8].Visible = false;
             stye.style(patients.data_patients);
         }
         // loads appointments
@@ -91,7 +98,7 @@ namespace MedCRM
             loadHome();
         }
         // opens patients page
-        private void btn_patients_Click(object sender, EventArgs e)
+        public void btn_patients_Click(object sender, EventArgs e)
         {
             loadPatients();
         }

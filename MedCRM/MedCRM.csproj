@@ -62,12 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddPatient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddPatient.Designer.cs">
-      <DependentUpon>AddPatient.cs</DependentUpon>
-    </Compile>
     <Compile Include="Appointments.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,17 +94,17 @@
     <Compile Include="Messages.Designer.cs">
       <DependentUpon>Messages.cs</DependentUpon>
     </Compile>
-    <Compile Include="patientRegistration.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="patientRegistration.Designer.cs">
-      <DependentUpon>patientRegistration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Patients.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Patients.Designer.cs">
       <DependentUpon>Patients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,9 +115,7 @@
       <DependentUpon>Reminders.cs</DependentUpon>
     </Compile>
     <Compile Include="StyleDataGrid.cs" />
-    <EmbeddedResource Include="AddPatient.resx">
-      <DependentUpon>AddPatient.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="utils.cs" />
     <EmbeddedResource Include="Appointments.resx">
       <DependentUpon>Appointments.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,11 +131,11 @@
     <EmbeddedResource Include="Messages.resx">
       <DependentUpon>Messages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="patientRegistration.resx">
-      <DependentUpon>patientRegistration.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

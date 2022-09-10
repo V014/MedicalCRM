@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MedCRM
 {
-    public partial class patientRegistration : UserControl
+    public partial class Profile : UserControl
     {
-        public patientRegistration()
+        public Profile()
         {
             InitializeComponent();
         }

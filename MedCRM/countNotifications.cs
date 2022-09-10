@@ -18,5 +18,10 @@
             string number = con.ReadString("SELECT COUNT(ID) FROM forum");
             return number;
         }
+        public string countPatients()
+        {
+            string number = con.ReadString("SELECT COUNT(ID) FROM patients");
+            return number;
+        }
     }
 }
