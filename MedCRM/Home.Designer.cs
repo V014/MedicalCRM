@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel_nav = new System.Windows.Forms.Panel();
+            this.btn_profile = new System.Windows.Forms.Button();
+            this.btn_staff = new System.Windows.Forms.Button();
             this.btn_payments = new System.Windows.Forms.Button();
             this.btn_messages = new System.Windows.Forms.Button();
             this.btn_forum = new System.Windows.Forms.Button();
@@ -38,15 +40,13 @@
             this.btn_patients = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
-            this.btn_doctors = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel_nav.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_nav
             // 
-            this.panel_nav.Controls.Add(this.button1);
-            this.panel_nav.Controls.Add(this.btn_doctors);
+            this.panel_nav.Controls.Add(this.btn_profile);
+            this.panel_nav.Controls.Add(this.btn_staff);
             this.panel_nav.Controls.Add(this.btn_payments);
             this.panel_nav.Controls.Add(this.btn_messages);
             this.panel_nav.Controls.Add(this.btn_forum);
@@ -59,6 +59,39 @@
             this.panel_nav.Name = "panel_nav";
             this.panel_nav.Size = new System.Drawing.Size(160, 579);
             this.panel_nav.TabIndex = 0;
+            // 
+            // btn_profile
+            // 
+            this.btn_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btn_profile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_profile.FlatAppearance.BorderSize = 0;
+            this.btn_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_profile.ForeColor = System.Drawing.Color.White;
+            this.btn_profile.Image = ((System.Drawing.Image)(resources.GetObject("btn_profile.Image")));
+            this.btn_profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_profile.Location = new System.Drawing.Point(0, 400);
+            this.btn_profile.Name = "btn_profile";
+            this.btn_profile.Size = new System.Drawing.Size(160, 50);
+            this.btn_profile.TabIndex = 8;
+            this.btn_profile.Text = "Profile";
+            this.btn_profile.UseVisualStyleBackColor = false;
+            this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
+            // 
+            // btn_staff
+            // 
+            this.btn_staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btn_staff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_staff.FlatAppearance.BorderSize = 0;
+            this.btn_staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_staff.ForeColor = System.Drawing.Color.White;
+            this.btn_staff.Image = ((System.Drawing.Image)(resources.GetObject("btn_staff.Image")));
+            this.btn_staff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_staff.Location = new System.Drawing.Point(0, 350);
+            this.btn_staff.Name = "btn_staff";
+            this.btn_staff.Size = new System.Drawing.Size(160, 50);
+            this.btn_staff.TabIndex = 7;
+            this.btn_staff.Text = "Staff";
+            this.btn_staff.UseVisualStyleBackColor = false;
             // 
             // btn_payments
             // 
@@ -188,38 +221,6 @@
             this.panel_main.Size = new System.Drawing.Size(825, 579);
             this.panel_main.TabIndex = 1;
             // 
-            // btn_doctors
-            // 
-            this.btn_doctors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btn_doctors.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_doctors.FlatAppearance.BorderSize = 0;
-            this.btn_doctors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_doctors.ForeColor = System.Drawing.Color.White;
-            this.btn_doctors.Image = ((System.Drawing.Image)(resources.GetObject("btn_doctors.Image")));
-            this.btn_doctors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_doctors.Location = new System.Drawing.Point(0, 350);
-            this.btn_doctors.Name = "btn_doctors";
-            this.btn_doctors.Size = new System.Drawing.Size(160, 50);
-            this.btn_doctors.TabIndex = 7;
-            this.btn_doctors.Text = "Doctors";
-            this.btn_doctors.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 50);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Profile";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +231,7 @@
             this.Name = "Home";
             this.Text = "MedCRM";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel_nav.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -247,8 +249,8 @@
         private System.Windows.Forms.Button btn_patients;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel panel_main;
-        private System.Windows.Forms.Button btn_doctors;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_staff;
+        private System.Windows.Forms.Button btn_profile;
     }
 }
 

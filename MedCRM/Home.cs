@@ -11,7 +11,8 @@ namespace MedCRM
         Appointments appointments = new Appointments();
         Reminders reminders = new Reminders();
         Messages messages = new Messages();
-        countNotifications countNotifications = new countNotifications();
+        Profile profile = new Profile();
+        utils utils = new utils();
         Forum forum = new Forum();
         StyleDataGrid stye = new StyleDataGrid();
         public Home()
@@ -22,10 +23,6 @@ namespace MedCRM
         private void Home_Load(object sender, EventArgs e)
         {
             loadHome();
-            dashboard.lbl_appointments.Text = countNotifications.countAppointments();
-            dashboard.lbl_reminders.Text = countNotifications.countReminders();
-            dashboard.lbl_forum.Text = countNotifications.countForum();
-            dashboard.lbl_patients.Text = countNotifications.countPatients();
         }
         // loads home
         void loadHome()
@@ -35,6 +32,13 @@ namespace MedCRM
             dashboard.Dock = DockStyle.Fill;
             dashboard.AutoSize = true;
             dashboard.Show();
+            dashboard.lbl_appointments.Text = utils.countAppointments();
+            dashboard.lbl_reminders.Text = utils.countReminders();
+            dashboard.lbl_forum.Text = utils.countForum();
+            dashboard.lbl_patients.Text = utils.countPatients();
+            int id = int.Parse(con.ReadString($"SELECT id FROM session WHERE status = 'online'"));
+            dashboard.lbl_name.Text = con.ReadString($"SELECT Name FROM profile WHERE ID = {id}");
+            dashboard.lbl_initials.Text = con.ReadString($"SELECT Initials FROM profile WHERE ID = {id}");
         }
         // loads patients
         private void loadPatients()
@@ -73,6 +77,7 @@ namespace MedCRM
             con.LoadData("SELECT * FROM reminders", reminders.data_reminders);
             stye.style(reminders.data_reminders);
         }
+        // loads the forun
         public void loadForum()
         {
             this.panel_main.Controls.Clear();
@@ -91,6 +96,15 @@ namespace MedCRM
             messages.Show();
             con.LoadData("SELECT * FROM messages", messages.data_messages);
             stye.style(messages.data_messages);
+        }
+        // loads user profile
+        public void loadProfile()
+        {
+            this.panel_main.Controls.Clear();
+            this.panel_main.Controls.Add(profile);
+            profile.Dock = DockStyle.Fill;
+            profile.AutoSize = true;
+            profile.Show();
         }
         // opens home page
         private void btn_home_Click(object sender, EventArgs e)
@@ -121,6 +135,17 @@ namespace MedCRM
         private void btn_messages_Click(object sender, EventArgs e)
         {
             loadMessages();
+        }
+        // opens profile page
+        private void btn_profile_Click(object sender, EventArgs e)
+        {
+            loadProfile();
+        }
+        // closes the whole application
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.ExecuteQuery($"UPDATE session SET StaffID = 0, status = 'offline' WHERE ID = 1");
+            Application.Exit();
         }
     }
 }

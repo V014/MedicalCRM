@@ -35,21 +35,21 @@
             this.panel_details = new MetroFramework.Controls.MetroPanel();
             this.data_patients = new System.Windows.Forms.DataGridView();
             this.panel_picture = new System.Windows.Forms.Panel();
-            this.txt_notes = new System.Windows.Forms.RichTextBox();
+            this.txt_gender = new MetroFramework.Controls.MetroComboBox();
+            this.txt_bloodtype = new MetroFramework.Controls.MetroComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_address = new System.Windows.Forms.RichTextBox();
             this.picture_profile = new System.Windows.Forms.PictureBox();
             this.txt_birthday = new MetroFramework.Controls.MetroDateTime();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_contact = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_bloodtype = new MetroFramework.Controls.MetroComboBox();
-            this.txt_gender = new MetroFramework.Controls.MetroComboBox();
+            this.txt_name = new MetroFramework.Controls.MetroTextBox();
+            this.txt_contact = new MetroFramework.Controls.MetroTextBox();
+            this.txt_address = new MetroFramework.Controls.MetroTextBox();
+            this.txt_notes = new MetroFramework.Controls.MetroTextBox();
             this.panel1.SuspendLayout();
             this.panel_details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_patients)).BeginInit();
@@ -136,19 +136,19 @@
             // 
             // panel_picture
             // 
+            this.panel_picture.Controls.Add(this.txt_contact);
+            this.panel_picture.Controls.Add(this.txt_notes);
+            this.panel_picture.Controls.Add(this.txt_address);
+            this.panel_picture.Controls.Add(this.txt_name);
             this.panel_picture.Controls.Add(this.txt_gender);
             this.panel_picture.Controls.Add(this.txt_bloodtype);
-            this.panel_picture.Controls.Add(this.txt_notes);
             this.panel_picture.Controls.Add(this.label6);
-            this.panel_picture.Controls.Add(this.txt_address);
             this.panel_picture.Controls.Add(this.picture_profile);
             this.panel_picture.Controls.Add(this.txt_birthday);
             this.panel_picture.Controls.Add(this.label4);
             this.panel_picture.Controls.Add(this.label1);
-            this.panel_picture.Controls.Add(this.txt_name);
             this.panel_picture.Controls.Add(this.label3);
             this.panel_picture.Controls.Add(this.label2);
-            this.panel_picture.Controls.Add(this.txt_contact);
             this.panel_picture.Controls.Add(this.label7);
             this.panel_picture.Controls.Add(this.label5);
             this.panel_picture.Dock = System.Windows.Forms.DockStyle.Top;
@@ -157,17 +157,43 @@
             this.panel_picture.Size = new System.Drawing.Size(797, 219);
             this.panel_picture.TabIndex = 3;
             // 
-            // txt_notes
+            // txt_gender
             // 
-            this.txt_notes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.txt_notes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_notes.Font = new System.Drawing.Font("Roboto", 10F);
-            this.txt_notes.ForeColor = System.Drawing.Color.Gray;
-            this.txt_notes.Location = new System.Drawing.Point(563, 33);
-            this.txt_notes.Name = "txt_notes";
-            this.txt_notes.Size = new System.Drawing.Size(220, 83);
-            this.txt_notes.TabIndex = 5;
-            this.txt_notes.Text = "";
+            this.txt_gender.FormattingEnabled = true;
+            this.txt_gender.ItemHeight = 23;
+            this.txt_gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.txt_gender.Location = new System.Drawing.Point(563, 164);
+            this.txt_gender.Name = "txt_gender";
+            this.txt_gender.Size = new System.Drawing.Size(163, 29);
+            this.txt_gender.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_gender.TabIndex = 6;
+            this.txt_gender.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_gender.UseSelectable = true;
+            // 
+            // txt_bloodtype
+            // 
+            this.txt_bloodtype.FormattingEnabled = true;
+            this.txt_bloodtype.ItemHeight = 23;
+            this.txt_bloodtype.Items.AddRange(new object[] {
+            "A",
+            "A+",
+            "A-",
+            "AB",
+            "B",
+            "B+",
+            "B-",
+            "O",
+            "O+",
+            "O-"});
+            this.txt_bloodtype.Location = new System.Drawing.Point(379, 164);
+            this.txt_bloodtype.Name = "txt_bloodtype";
+            this.txt_bloodtype.Size = new System.Drawing.Size(163, 29);
+            this.txt_bloodtype.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_bloodtype.TabIndex = 6;
+            this.txt_bloodtype.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_bloodtype.UseSelectable = true;
             // 
             // label6
             // 
@@ -179,18 +205,6 @@
             this.label6.Size = new System.Drawing.Size(45, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Notes";
-            // 
-            // txt_address
-            // 
-            this.txt_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.txt_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_address.Font = new System.Drawing.Font("Roboto", 10F);
-            this.txt_address.ForeColor = System.Drawing.Color.Gray;
-            this.txt_address.Location = new System.Drawing.Point(377, 33);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(165, 83);
-            this.txt_address.TabIndex = 4;
-            this.txt_address.Text = "";
             // 
             // picture_profile
             // 
@@ -237,17 +251,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Full Name";
             // 
-            // txt_name
-            // 
-            this.txt_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_name.Font = new System.Drawing.Font("Roboto", 10F);
-            this.txt_name.ForeColor = System.Drawing.Color.Gray;
-            this.txt_name.Location = new System.Drawing.Point(195, 33);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(166, 17);
-            this.txt_name.TabIndex = 0;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -269,17 +272,6 @@
             this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Date of Birth";
-            // 
-            // txt_contact
-            // 
-            this.txt_contact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.txt_contact.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_contact.Font = new System.Drawing.Font("Roboto", 10F);
-            this.txt_contact.ForeColor = System.Drawing.Color.Gray;
-            this.txt_contact.Location = new System.Drawing.Point(195, 97);
-            this.txt_contact.Name = "txt_contact";
-            this.txt_contact.Size = new System.Drawing.Size(166, 17);
-            this.txt_contact.TabIndex = 1;
             // 
             // label7
             // 
@@ -303,43 +295,135 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Blood Type";
             // 
-            // txt_bloodtype
+            // txt_name
             // 
-            this.txt_bloodtype.FormattingEnabled = true;
-            this.txt_bloodtype.ItemHeight = 23;
-            this.txt_bloodtype.Items.AddRange(new object[] {
-            "A",
-            "A+",
-            "A-",
-            "AB",
-            "B",
-            "B+",
-            "B-",
-            "O",
-            "O+",
-            "O-"});
-            this.txt_bloodtype.Location = new System.Drawing.Point(379, 164);
-            this.txt_bloodtype.Name = "txt_bloodtype";
-            this.txt_bloodtype.Size = new System.Drawing.Size(163, 29);
-            this.txt_bloodtype.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_bloodtype.TabIndex = 6;
-            this.txt_bloodtype.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.txt_bloodtype.UseSelectable = true;
             // 
-            // txt_gender
             // 
-            this.txt_gender.FormattingEnabled = true;
-            this.txt_gender.ItemHeight = 23;
-            this.txt_gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.txt_gender.Location = new System.Drawing.Point(563, 164);
-            this.txt_gender.Name = "txt_gender";
-            this.txt_gender.Size = new System.Drawing.Size(163, 29);
-            this.txt_gender.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_gender.TabIndex = 6;
-            this.txt_gender.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.txt_gender.UseSelectable = true;
+            // 
+            this.txt_name.CustomButton.Image = null;
+            this.txt_name.CustomButton.Location = new System.Drawing.Point(143, 1);
+            this.txt_name.CustomButton.Name = "";
+            this.txt_name.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_name.CustomButton.TabIndex = 1;
+            this.txt_name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_name.CustomButton.UseSelectable = true;
+            this.txt_name.CustomButton.Visible = false;
+            this.txt_name.Lines = new string[0];
+            this.txt_name.Location = new System.Drawing.Point(196, 33);
+            this.txt_name.MaxLength = 32767;
+            this.txt_name.Name = "txt_name";
+            this.txt_name.PasswordChar = '\0';
+            this.txt_name.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_name.SelectedText = "";
+            this.txt_name.SelectionLength = 0;
+            this.txt_name.SelectionStart = 0;
+            this.txt_name.ShortcutsEnabled = true;
+            this.txt_name.Size = new System.Drawing.Size(165, 23);
+            this.txt_name.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_name.TabIndex = 7;
+            this.txt_name.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_name.UseSelectable = true;
+            this.txt_name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txt_contact
+            // 
+            // 
+            // 
+            // 
+            this.txt_contact.CustomButton.Image = null;
+            this.txt_contact.CustomButton.Location = new System.Drawing.Point(143, 1);
+            this.txt_contact.CustomButton.Name = "";
+            this.txt_contact.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_contact.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_contact.CustomButton.TabIndex = 1;
+            this.txt_contact.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_contact.CustomButton.UseSelectable = true;
+            this.txt_contact.CustomButton.Visible = false;
+            this.txt_contact.Lines = new string[0];
+            this.txt_contact.Location = new System.Drawing.Point(197, 104);
+            this.txt_contact.MaxLength = 32767;
+            this.txt_contact.Name = "txt_contact";
+            this.txt_contact.PasswordChar = '\0';
+            this.txt_contact.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_contact.SelectedText = "";
+            this.txt_contact.SelectionLength = 0;
+            this.txt_contact.SelectionStart = 0;
+            this.txt_contact.ShortcutsEnabled = true;
+            this.txt_contact.Size = new System.Drawing.Size(165, 23);
+            this.txt_contact.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_contact.TabIndex = 7;
+            this.txt_contact.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_contact.UseSelectable = true;
+            this.txt_contact.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_contact.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txt_address
+            // 
+            // 
+            // 
+            // 
+            this.txt_address.CustomButton.Image = null;
+            this.txt_address.CustomButton.Location = new System.Drawing.Point(73, 2);
+            this.txt_address.CustomButton.Name = "";
+            this.txt_address.CustomButton.Size = new System.Drawing.Size(89, 89);
+            this.txt_address.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_address.CustomButton.TabIndex = 1;
+            this.txt_address.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_address.CustomButton.UseSelectable = true;
+            this.txt_address.CustomButton.Visible = false;
+            this.txt_address.Lines = new string[0];
+            this.txt_address.Location = new System.Drawing.Point(379, 33);
+            this.txt_address.MaxLength = 32767;
+            this.txt_address.Multiline = true;
+            this.txt_address.Name = "txt_address";
+            this.txt_address.PasswordChar = '\0';
+            this.txt_address.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_address.SelectedText = "";
+            this.txt_address.SelectionLength = 0;
+            this.txt_address.SelectionStart = 0;
+            this.txt_address.ShortcutsEnabled = true;
+            this.txt_address.Size = new System.Drawing.Size(165, 94);
+            this.txt_address.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_address.TabIndex = 7;
+            this.txt_address.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_address.UseSelectable = true;
+            this.txt_address.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_address.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txt_notes
+            // 
+            // 
+            // 
+            // 
+            this.txt_notes.CustomButton.Image = null;
+            this.txt_notes.CustomButton.Location = new System.Drawing.Point(73, 2);
+            this.txt_notes.CustomButton.Name = "";
+            this.txt_notes.CustomButton.Size = new System.Drawing.Size(89, 89);
+            this.txt_notes.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_notes.CustomButton.TabIndex = 1;
+            this.txt_notes.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_notes.CustomButton.UseSelectable = true;
+            this.txt_notes.CustomButton.Visible = false;
+            this.txt_notes.Lines = new string[0];
+            this.txt_notes.Location = new System.Drawing.Point(561, 30);
+            this.txt_notes.MaxLength = 32767;
+            this.txt_notes.Multiline = true;
+            this.txt_notes.Name = "txt_notes";
+            this.txt_notes.PasswordChar = '\0';
+            this.txt_notes.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_notes.SelectedText = "";
+            this.txt_notes.SelectionLength = 0;
+            this.txt_notes.SelectionStart = 0;
+            this.txt_notes.ShortcutsEnabled = true;
+            this.txt_notes.Size = new System.Drawing.Size(165, 94);
+            this.txt_notes.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_notes.TabIndex = 7;
+            this.txt_notes.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_notes.UseSelectable = true;
+            this.txt_notes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_notes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Patients
             // 
@@ -367,20 +451,20 @@
         private MetroFramework.Controls.MetroPanel panel_details;
         public System.Windows.Forms.DataGridView data_patients;
         private System.Windows.Forms.Panel panel_picture;
-        private System.Windows.Forms.RichTextBox txt_notes;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox txt_address;
         private System.Windows.Forms.PictureBox picture_profile;
         private MetroFramework.Controls.MetroDateTime txt_birthday;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_contact;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private MetroFramework.Controls.MetroComboBox txt_bloodtype;
         private MetroFramework.Controls.MetroComboBox txt_gender;
+        private MetroFramework.Controls.MetroTextBox txt_contact;
+        private MetroFramework.Controls.MetroTextBox txt_address;
+        private MetroFramework.Controls.MetroTextBox txt_name;
+        private MetroFramework.Controls.MetroTextBox txt_notes;
     }
 }

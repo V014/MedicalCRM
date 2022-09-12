@@ -28,6 +28,14 @@ namespace MedCRM
                 txt_address.Text = row.Cells[6].Value.ToString();
                 txt_notes.Text = row.Cells[7].Value.ToString();
                 utils.id = Convert.ToInt32(row.Cells[0].Value.ToString());
+                if (!string.IsNullOrEmpty(row.Cells[8].Value.ToString()))
+                {
+                    picture_profile.ImageLocation = row.Cells[8].Value.ToString();
+                }
+                else
+                {
+                    picture_profile.ImageLocation = @"profiles/person.png";
+                }
             }
             catch (Exception)
             {
@@ -61,8 +69,8 @@ namespace MedCRM
             {
                 try
                 {
-                    string imagePath = picture_profile.ImageLocation;
-                    con.ExecuteQuery($"INSERT INTO patients (name, contact, birthday, bloodtype, gender, address, notes, picture, date) VALUES('{name}', '{contact}', '{birthday}', '{bloodtype}', '{gender}', '{address}', '{notes}', '{imagePath}' '{date}')");
+                    string imagePath = @"profiles/patients/" + name + ".jpeg";
+                    con.ExecuteQuery($"INSERT INTO patients (name, contact, birthday, bloodtype, gender, address, notes, picture, date) VALUES('{name}', '{contact}', '{birthday}', '{bloodtype}', '{gender}', '{address}', '{notes}', '{imagePath}', '{date}')");
                     MessageBox.Show("Patient registered!", "Success!");
                     loadPatients();
                 }
@@ -93,7 +101,7 @@ namespace MedCRM
             {
                 try
                 {
-                    string imagePath = picture_profile.ImageLocation;
+                    string imagePath = @"profiles/patients/" + name + ".jpeg";
                     con.ExecuteQuery($"UPDATE patients SET Name = '{name}', Contact = '{contact}', Birthday = '{birthday}', Bloodtype = '{bloodtype}', gender = '{gender}', Address = '{address}', Notes = '{notes}', Picture = '{imagePath}' WHERE ID = {id}");
                     MessageBox.Show("Patient records updated!", "Sucess!");
                     loadPatients();
@@ -114,9 +122,19 @@ namespace MedCRM
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string sourcePath = ofd.FileName;
-                string destinationPath = @"profiles/patients/" + txt_name.Text + ".jpeg";
-                File.Copy(sourcePath, destinationPath);
-                picture_profile.ImageLocation = sourcePath;
+                string name = txt_name.Text;
+                string destinationPath = @"profiles/patients/" + name + ".jpeg";
+                if (!File.Exists(sourcePath))
+                {
+                    File.Copy(sourcePath, destinationPath);
+                    picture_profile.ImageLocation = sourcePath;
+                }
+                else
+                {
+                    File.Delete(destinationPath);
+                    File.Copy(sourcePath, destinationPath);
+                    picture_profile.ImageLocation = sourcePath;
+                }
             }
         }
     }

@@ -8,6 +8,27 @@ namespace MedCRM
 {
     class utils
     {
-        public int id = 0;
+        Connection con = new Connection();
+        public int id;
+        public string countReminders()
+        {
+            string number = con.ReadString("SELECT COUNT(ID) FROM reminders");
+            return number;
+        }
+        public string countAppointments()
+        {
+            string number = con.ReadString("SELECT COUNT(ID) FROM appointments");
+            return number;
+        }
+        public string countForum()
+        {
+            string number = con.ReadString("SELECT COUNT(ID) FROM forum");
+            return number;
+        }
+        public string countPatients()
+        {
+            string number = con.ReadString("SELECT COUNT(ID) FROM patients");
+            return number;
+        }
     }
 }

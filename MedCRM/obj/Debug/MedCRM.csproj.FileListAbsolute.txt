@@ -21,7 +21,6 @@ C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\bin\Debug\MedC
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\bin\Debug\MedCRM.pdb
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\bin\Debug\System.Data.SQLite.xml
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.csprojResolveAssemblyReference.cache
-C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.AddPatient.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Appointments.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Dashboard.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Forum.resources
@@ -31,5 +30,7 @@ C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedC
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Properties.Resources.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Reminders.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.csproj.GenerateResource.Cache
-C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.patientRegistration.resources
 C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Profile.resources
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Login.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Login.resources
+C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Profile.resources
