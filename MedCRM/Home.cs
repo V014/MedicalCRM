@@ -65,6 +65,13 @@ namespace MedCRM
             appointments.Dock = DockStyle.Fill;
             appointments.Show();
             con.LoadData("SELECT * FROM appointments", appointments.data_appointments);
+            appointments.data_appointments.Columns[2].Visible = false;
+            appointments.data_appointments.Columns[3].Visible = false;
+            appointments.data_appointments.Columns[4].Visible = false;
+            appointments.data_appointments.Columns[5].Visible = false;
+            appointments.data_appointments.Columns[6].Visible = false;
+            appointments.data_appointments.Columns[7].Visible = false;
+            appointments.data_appointments.Columns[8].Visible = false;
             stye.style(appointments.data_appointments);
         }
         // loads reminder

@@ -56,6 +56,18 @@ namespace MedCRM
             dataGrid.DataSource = DT;
             con.Close();
         }
+        public void LoadItems(string query, ComboBox combobox)
+        {
+            var conn = GetConnection();
+            var DA = new SQLiteDataAdapter(query, con);
+            var DT = new DataTable();
+            DA.Fill(DT);
+            foreach(DataRow dr in DT.Rows)
+            {
+                combobox.Items.Add(dr["Name"].ToString());
+            }
+            con.Close();
+        }
         // pulls data from the database and returns a dataTable
         public DataTable ExportData(string query)
         {
