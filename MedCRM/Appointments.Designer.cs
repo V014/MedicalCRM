@@ -324,7 +324,8 @@
             this.txt_status.Items.AddRange(new object[] {
             "Pending",
             "In session",
-            "Attended"});
+            "Attended",
+            "Canceled"});
             this.txt_status.Location = new System.Drawing.Point(574, 33);
             this.txt_status.Name = "txt_status";
             this.txt_status.Size = new System.Drawing.Size(163, 29);
