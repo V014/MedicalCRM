@@ -37,7 +37,10 @@ namespace MedCRM
             dashboard.lbl_forum.Text = utils.countForum();
             dashboard.lbl_patients.Text = utils.countPatients();
             int id = int.Parse(con.ReadString($"SELECT id FROM session WHERE status = 'online'"));
-            dashboard.lbl_name.Text = con.ReadString($"SELECT Name FROM profile WHERE ID = {id}");
+            string name = con.ReadString($"SELECT Name FROM profile WHERE ID = {id}");
+            dashboard.lbl_name.Text = name;
+            // store full name for later
+            utils.name = name;
             dashboard.lbl_initials.Text = con.ReadString($"SELECT Initials FROM profile WHERE ID = {id}");
         }
         // loads patients
@@ -82,6 +85,11 @@ namespace MedCRM
             reminders.Dock = DockStyle.Fill;
             reminders.Show();
             con.LoadData("SELECT * FROM reminders", reminders.data_reminders);
+            reminders.data_reminders.Columns[2].Visible = false;
+            reminders.data_reminders.Columns[3].Visible = false;
+            reminders.data_reminders.Columns[4].Visible = false;
+            reminders.data_reminders.Columns[5].Visible = false;
+            reminders.data_reminders.Columns[6].Visible = false;
             stye.style(reminders.data_reminders);
         }
         // loads the forun
@@ -92,6 +100,13 @@ namespace MedCRM
             forum.Dock = DockStyle.Fill;
             forum.Show();
             con.LoadData("SELECT * FROM forum", forum.data_forum);
+            forum.data_forum.ColumnHeadersVisible = false;
+            forum.data_forum.Columns[0].Visible = false;
+            forum.data_forum.Columns[2].Visible = false;
+            forum.data_forum.Columns[3].Visible = false;
+            forum.data_forum.Columns[4].Visible = false;
+            forum.data_forum.Columns[5].Visible = false;
+            forum.data_forum.Columns[6].Visible = false;
             stye.style(forum.data_forum);
         }
         // loads messages
@@ -151,7 +166,7 @@ namespace MedCRM
         // closes the whole application
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            con.ExecuteQuery($"UPDATE session SET StaffID = 0, status = 'offline' WHERE ID = 1");
+            con.ExecuteQuery($"UPDATE session SET StaffID = 0, Name = '', status = 'offline' WHERE ID = 1");
             Application.Exit();
         }
     }

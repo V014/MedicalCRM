@@ -30,7 +30,7 @@ namespace MedCRM
             if (!string.IsNullOrEmpty(result))
             {
                 int id = int.Parse(result);
-                con.ExecuteQuery($"UPDATE session SET StaffID = {id}, status = 'online', date = '{date}' WHERE id = 1");
+                con.ExecuteQuery($"UPDATE session SET StaffID = {id}, status = 'online', Name = '{name}', date = '{date}' WHERE id = 1");
                 this.Hide();
                 home.Show();
             }

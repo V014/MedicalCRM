@@ -218,14 +218,14 @@
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(180, 60);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(825, 579);
+            this.panel_main.Size = new System.Drawing.Size(836, 579);
             this.panel_main.TabIndex = 1;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 659);
+            this.ClientSize = new System.Drawing.Size(1036, 659);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel_nav);
             this.Name = "Home";
