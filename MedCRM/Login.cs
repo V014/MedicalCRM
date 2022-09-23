@@ -1,43 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MedCRM
 {
     public partial class Login : MetroFramework.Forms.MetroForm
     {
-        Connection con = new Connection();
-        Home home = new Home();
-        utils utils = new utils();
-        string date = DateTime.Now.ToString("d");
+        Connection con = new Connection(); // link connection class
+        Home home = new Home(); // link home page / Dashboard
+        utils utils = new utils(); // link utilities class
+        string date = DateTime.Now.ToString("d"); // link date and time class
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btn_authenticate_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
             string name = txt_name.Text;
             string password = txt_password.Text;
 
-            string result = con.ReadString($"SELECT id FROM profile WHERE name = '{name}' AND password = '{password}'");
-            if (!string.IsNullOrEmpty(result))
+            // try to find matching credentials in the database
+            try
             {
-                int id = int.Parse(result);
-                con.ExecuteQuery($"UPDATE session SET StaffID = {id}, status = 'online', Name = '{name}', date = '{date}' WHERE id = 1");
-                this.Hide();
-                home.Show();
+                string result = con.ReadString($"SELECT ID FROM profile WHERE name = '{name}' AND password = '{password}'");
+                if (!string.IsNullOrEmpty(result))
+                {
+                    int id = int.Parse(result);
+                    con.ExecuteQuery($"INSERT INTO session (UserID, status, name, date) VALUES( {id}, 'online', '{name}', '{date}')");
+                    utils.userID = id;
+                    utils.username = name;
+                    this.Hide();
+                    home.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Your credentials are incorrect!");
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Your credentials are incorrect!");
+                MessageBox.Show("Error Message!", "Error!");
             }
+            
         }
     }
 }

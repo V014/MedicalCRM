@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 
@@ -34,15 +27,13 @@ namespace MedCRM
         }
         private void loadComments()
         {
-            int id = utils.id;
+            int id = utils.userID;
             if (id != 0)
             {
                 con.LoadData($"SELECT Name, Comment, Date FROM comments WHERE ForumID = '{id}'", data_comments);
-                //data_comments.Columns[1].Visible = false;
-                //data_comments.Columns[5].Visible = false;
-                //data_comments.Columns[6].Visible = false;
-                //data_comments.Columns[7].Visible = false;
                 style.styleChat(data_comments);
+                data_comments.Columns[0].Width = 100;
+                data_comments.Columns[1].Width = 600;
             }
             else
             {
@@ -52,16 +43,17 @@ namespace MedCRM
         private void btn_comment_Click(object sender, EventArgs e)
         {
             string comment = txt_comment.Text;
-            int id = utils.id;
+            int id = utils.userID;
             string name = con.ReadString("SELECT name FROM session WHERE id = 1");
             
             if (!string.IsNullOrEmpty(comment))
             {
                 con.ExecuteQuery($"INSERT INTO comments (ForumID, Name, Comment, Date) VALUES('{id}', '{name}', '{comment}', '{date}')");
                 loadComments();
+                txt_comment.Clear();
                 // play chime
-                //SoundPlayer chime = new SoundPlayer(@"sfx/pop.wav");
-                //chime.Play();
+                SoundPlayer chime = new SoundPlayer(@"sfx/pop.wav");
+                chime.Play();
             }
             else
             {
@@ -77,14 +69,14 @@ namespace MedCRM
             txt_date.Text = row.Cells[4].Value.ToString();
             txt_time.Text = row.Cells[6].Value.ToString();
             txt_lead.Text = row.Cells[2].Value.ToString();
-            utils.id = Convert.ToInt32(row.Cells[0].Value.ToString());
+            utils.userID = Convert.ToInt32(row.Cells[0].Value.ToString());
             loadComments();
             style.styleChat(data_comments);
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            int id = utils.id;
+            int id = utils.userID;
             string title = txt_title.Text;
             string description = txt_description.Text;
             string dateset = txt_date.Text;
@@ -128,6 +120,11 @@ namespace MedCRM
                 MessageBox.Show("Application Error!", "Error!");
             }
             
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

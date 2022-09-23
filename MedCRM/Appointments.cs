@@ -51,7 +51,7 @@ namespace MedCRM
                 txt_date.Text = row.Cells[6].Value.ToString();
                 txt_time.Text = row.Cells[7].Value.ToString();
                 txt_status.Text = row.Cells[8].Value.ToString();
-                utils.id = Convert.ToInt32(row.Cells[0].Value.ToString());
+                utils.userID = Convert.ToInt32(row.Cells[0].Value.ToString());
             }
             catch (Exception)
             {
@@ -93,7 +93,7 @@ namespace MedCRM
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            int id = utils.id;
+            int id = utils.userID;
             string interviewer = txt_interviewer.Text;
             string interviewee = txt_interviewee.Text;
             string intervieweePosition = txt_intervieweePosition.Text;

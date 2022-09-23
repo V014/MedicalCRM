@@ -15,6 +15,8 @@ namespace MedCRM
         utils utils = new utils();
         Forum forum = new Forum();
         StyleDataGrid stye = new StyleDataGrid();
+        string name;
+        int id;
         public Home()
         {
             InitializeComponent();
@@ -36,12 +38,11 @@ namespace MedCRM
             dashboard.lbl_reminders.Text = utils.countReminders();
             dashboard.lbl_forum.Text = utils.countForum();
             dashboard.lbl_patients.Text = utils.countPatients();
-            int id = int.Parse(con.ReadString($"SELECT id FROM session WHERE status = 'online'"));
-            string name = con.ReadString($"SELECT Name FROM profile WHERE ID = {id}");
+            name = utils.username;
+            id = utils.userID;
+            //id = int.Parse(con.ReadString($"SELECT ID FROM session WHERE status = 'online'"));
+            //name = con.ReadString($"SELECT Name FROM session WHERE ID = {id}");
             dashboard.lbl_name.Text = name;
-            // store full name for later
-            utils.name = name;
-            dashboard.lbl_initials.Text = con.ReadString($"SELECT Initials FROM profile WHERE ID = {id}");
         }
         // loads patients
         private void loadPatients()
@@ -116,8 +117,12 @@ namespace MedCRM
             this.panel_main.Controls.Add(messages);
             messages.Dock = DockStyle.Fill;
             messages.Show();
-            con.LoadData("SELECT * FROM messages", messages.data_messages);
-            stye.style(messages.data_messages);
+            con.LoadData($"SELECT `ID`, `From`, `To`,`Date` FROM messages WHERE `To` = '{name}'", messages.data_messages);
+            messages.data_messages.Columns[0].Visible = false;
+            // messages.data_messages.Columns[1].Visible = false;
+            messages.data_messages.Columns[2].Visible = false;
+            messages.data_messages.Columns[3].Visible = false;
+            stye.styleChat(messages.data_messages);
         }
         // loads user profile
         public void loadProfile()
@@ -166,7 +171,7 @@ namespace MedCRM
         // closes the whole application
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            con.ExecuteQuery($"UPDATE session SET StaffID = 0, Name = '', status = 'offline' WHERE ID = 1");
+            con.ExecuteQuery($"UPDATE session SET UserID = 0, Name = '', status = 'offline' WHERE ID = 1");
             Application.Exit();
         }
     }

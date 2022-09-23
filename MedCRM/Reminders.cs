@@ -33,7 +33,7 @@ namespace MedCRM
                 txt_date.Text = row.Cells[3].Value.ToString();
                 txt_time.Text = row.Cells[4].Value.ToString();
                 txt_repeat.Text = row.Cells[5].Value.ToString();
-                utils.id = Convert.ToInt32(row.Cells[0].Value.ToString());
+                utils.userID = Convert.ToInt32(row.Cells[0].Value.ToString());
             }
             catch (Exception)
             {
@@ -70,7 +70,7 @@ namespace MedCRM
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            int id = utils.id;
+            int id = utils.userID;
             string title = txt_title.Text;
             string description = txt_description.Text;
             string dateset = txt_date.Text;

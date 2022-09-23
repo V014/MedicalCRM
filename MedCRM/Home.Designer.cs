@@ -228,6 +228,7 @@
             this.ClientSize = new System.Drawing.Size(1036, 659);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel_nav);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.Text = "MedCRM";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

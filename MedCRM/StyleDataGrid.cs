@@ -45,18 +45,19 @@ namespace MedCRM
         public void styleChat(DataGridView dataGrid)
         {
             //dataGrid.BorderStyle = BorderStyle.None;
-            dataGrid.EnableHeadersVisualStyles = false;
+            dataGrid.EnableHeadersVisualStyles = true;
             dataGrid.BorderStyle = BorderStyle.None;
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGrid.ColumnHeadersVisible = false;
             dataGrid.RowHeadersVisible = false;
             dataGrid.AllowUserToAddRows = false;
             dataGrid.AllowUserToDeleteRows = false;
             dataGrid.AllowUserToResizeRows = false;
-            dataGrid.AllowUserToResizeColumns = false;
+            dataGrid.AllowUserToResizeColumns = true;
             dataGrid.AllowUserToOrderColumns = false;
 
             dataGrid.BackgroundColor = Color.FromArgb(17, 17, 17);

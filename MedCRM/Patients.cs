@@ -27,7 +27,7 @@ namespace MedCRM
 				txt_gender.Text = row.Cells[5].Value.ToString();
                 txt_address.Text = row.Cells[6].Value.ToString();
                 txt_notes.Text = row.Cells[7].Value.ToString();
-                utils.id = Convert.ToInt32(row.Cells[0].Value.ToString());
+                utils.userID = Convert.ToInt32(row.Cells[0].Value.ToString());
                 if (!string.IsNullOrEmpty(row.Cells[8].Value.ToString()))
                 {
                     picture_profile.ImageLocation = row.Cells[8].Value.ToString();
@@ -87,7 +87,7 @@ namespace MedCRM
         }
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            int id = utils.id;
+            int id = utils.userID;
             string name = txt_name.Text;
             string contact = txt_contact.Text;
             string birthday = txt_birthday.Text;

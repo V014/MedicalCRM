@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MedCRM
+﻿namespace MedCRM
 {
     class utils
     {
         Connection con = new Connection();
         // stores user ID during a session
-        public int id;
-        // stores the user name during a session
-        public string name;
+        public int userID;
+        public string username;
         // counts the reminders
         public string countReminders()
         {

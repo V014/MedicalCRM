@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MetroFramework.Controls.MetroButton btn_authenticate;
+            MetroFramework.Controls.MetroButton btn_login;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_password = new MetroFramework.Controls.MetroTextBox();
@@ -36,26 +36,26 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txt_name = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            btn_authenticate = new MetroFramework.Controls.MetroButton();
+            btn_login = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_authenticate
+            // btn_login
             // 
-            btn_authenticate.Location = new System.Drawing.Point(20, 149);
-            btn_authenticate.Name = "btn_authenticate";
-            btn_authenticate.Size = new System.Drawing.Size(214, 32);
-            btn_authenticate.Style = MetroFramework.MetroColorStyle.Blue;
-            btn_authenticate.TabIndex = 2;
-            btn_authenticate.Text = "Authenticate";
-            btn_authenticate.Theme = MetroFramework.MetroThemeStyle.Dark;
-            btn_authenticate.UseSelectable = true;
-            btn_authenticate.Click += new System.EventHandler(this.btn_authenticate_Click);
+            btn_login.Location = new System.Drawing.Point(20, 149);
+            btn_login.Name = "btn_login";
+            btn_login.Size = new System.Drawing.Size(214, 32);
+            btn_login.Style = MetroFramework.MetroColorStyle.Blue;
+            btn_login.TabIndex = 2;
+            btn_login.Text = "Login";
+            btn_login.Theme = MetroFramework.MetroThemeStyle.Dark;
+            btn_login.UseSelectable = true;
+            btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(btn_authenticate);
+            this.panel1.Controls.Add(btn_login);
             this.panel1.Controls.Add(this.txt_password);
             this.panel1.Controls.Add(this.metroLabel2);
             this.panel1.Controls.Add(this.metroLabel1);
@@ -167,11 +167,11 @@
             this.ClientSize = new System.Drawing.Size(296, 471);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
-            this.ShowIcon = false;
             this.Text = "Login";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
