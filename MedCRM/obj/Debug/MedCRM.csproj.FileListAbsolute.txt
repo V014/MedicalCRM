@@ -34,3 +34,12 @@ C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\obj\Debug\Med
 C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Login.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Login.resources
 C:\Users\User\Documents\Visual Studio 2015\Projects\MedCRM\MedCRM\obj\Debug\MedCRM.Profile.resources
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.dll
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.pdb
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.xml
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Wanga\documents\visual studio 2015\Projects\MedCRM\MedCRM\bin\Debug\LiveCharts.Wpf.xml

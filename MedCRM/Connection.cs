@@ -69,7 +69,7 @@ namespace MedCRM
             con.Close();
         }
         // pulls data from the database and returns a dataTable
-        public DataTable ExportData(string query)
+        public DataTable dataTable(string query)
         {
             var conn = GetConnection();
             var DB = new SQLiteDataAdapter(query, conn);

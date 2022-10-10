@@ -29,42 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Messages));
-            this.data_texts = new System.Windows.Forms.DataGridView();
+            this.data_in = new System.Windows.Forms.DataGridView();
             this.data_messages = new System.Windows.Forms.DataGridView();
             this.txt_from = new MetroFramework.Controls.MetroTextBox();
             this.txt_to = new MetroFramework.Controls.MetroTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_comment = new System.Windows.Forms.Button();
+            this.btn_send = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txt_text = new MetroFramework.Controls.MetroTextBox();
+            this.txt_message = new MetroFramework.Controls.MetroTextBox();
             this.panel_details = new System.Windows.Forms.Panel();
             this.txt_date = new MetroFramework.Controls.MetroTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_top = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.data_texts)).BeginInit();
+            this.lbl_to = new System.Windows.Forms.Label();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.data_out = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_from = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.data_in)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_messages)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel_details.SuspendLayout();
             this.panel_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_out)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // data_texts
+            // data_in
             // 
-            this.data_texts.AllowUserToAddRows = false;
-            this.data_texts.AllowUserToDeleteRows = false;
-            this.data_texts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.data_texts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.data_texts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_texts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_texts.Location = new System.Drawing.Point(203, 36);
-            this.data_texts.Name = "data_texts";
-            this.data_texts.ReadOnly = true;
-            this.data_texts.Size = new System.Drawing.Size(685, 425);
-            this.data_texts.TabIndex = 0;
+            this.data_in.AllowUserToAddRows = false;
+            this.data_in.AllowUserToDeleteRows = false;
+            this.data_in.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.data_in.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.data_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.data_in.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_in.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_in.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_in.Location = new System.Drawing.Point(0, 0);
+            this.data_in.Name = "data_in";
+            this.data_in.ReadOnly = true;
+            this.data_in.ShowEditingIcon = false;
+            this.data_in.Size = new System.Drawing.Size(340, 461);
+            this.data_in.TabIndex = 0;
             // 
             // data_messages
             // 
@@ -181,24 +194,25 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "To";
             // 
-            // btn_comment
+            // btn_send
             // 
-            this.btn_comment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btn_comment.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_comment.FlatAppearance.BorderSize = 0;
-            this.btn_comment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btn_comment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_comment.Font = new System.Drawing.Font("Roboto", 8F);
-            this.btn_comment.ForeColor = System.Drawing.Color.White;
-            this.btn_comment.Image = ((System.Drawing.Image)(resources.GetObject("btn_comment.Image")));
-            this.btn_comment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_comment.Location = new System.Drawing.Point(445, 0);
-            this.btn_comment.Name = "btn_comment";
-            this.btn_comment.Padding = new System.Windows.Forms.Padding(3);
-            this.btn_comment.Size = new System.Drawing.Size(120, 42);
-            this.btn_comment.TabIndex = 0;
-            this.btn_comment.Text = "Send";
-            this.btn_comment.UseVisualStyleBackColor = false;
+            this.btn_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btn_send.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_send.FlatAppearance.BorderSize = 0;
+            this.btn_send.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_send.Font = new System.Drawing.Font("Roboto", 8F);
+            this.btn_send.ForeColor = System.Drawing.Color.White;
+            this.btn_send.Image = ((System.Drawing.Image)(resources.GetObject("btn_send.Image")));
+            this.btn_send.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_send.Location = new System.Drawing.Point(445, 0);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Padding = new System.Windows.Forms.Padding(3);
+            this.btn_send.Size = new System.Drawing.Size(120, 42);
+            this.btn_send.TabIndex = 0;
+            this.btn_send.Text = "Send";
+            this.btn_send.UseVisualStyleBackColor = false;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
             // btn_clear
             // 
@@ -221,8 +235,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txt_text);
-            this.panel2.Controls.Add(this.btn_comment);
+            this.panel2.Controls.Add(this.txt_message);
+            this.panel2.Controls.Add(this.btn_send);
             this.panel2.Controls.Add(this.btn_clear);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(203, 461);
@@ -230,41 +244,41 @@
             this.panel2.Size = new System.Drawing.Size(685, 42);
             this.panel2.TabIndex = 11;
             // 
-            // txt_text
+            // txt_message
             // 
             // 
             // 
             // 
-            this.txt_text.CustomButton.Image = null;
-            this.txt_text.CustomButton.Location = new System.Drawing.Point(405, 2);
-            this.txt_text.CustomButton.Name = "";
-            this.txt_text.CustomButton.Size = new System.Drawing.Size(37, 37);
-            this.txt_text.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_text.CustomButton.TabIndex = 1;
-            this.txt_text.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txt_text.CustomButton.UseSelectable = true;
-            this.txt_text.CustomButton.Visible = false;
-            this.txt_text.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_text.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txt_text.Lines = new string[0];
-            this.txt_text.Location = new System.Drawing.Point(0, 0);
-            this.txt_text.MaxLength = 32767;
-            this.txt_text.Name = "txt_text";
-            this.txt_text.PasswordChar = '\0';
-            this.txt_text.PromptText = "Write message here...";
-            this.txt_text.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_text.SelectedText = "";
-            this.txt_text.SelectionLength = 0;
-            this.txt_text.SelectionStart = 0;
-            this.txt_text.ShortcutsEnabled = true;
-            this.txt_text.Size = new System.Drawing.Size(445, 42);
-            this.txt_text.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_text.TabIndex = 0;
-            this.txt_text.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.txt_text.UseSelectable = true;
-            this.txt_text.WaterMark = "Write message here...";
-            this.txt_text.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txt_text.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_message.CustomButton.Image = null;
+            this.txt_message.CustomButton.Location = new System.Drawing.Point(405, 2);
+            this.txt_message.CustomButton.Name = "";
+            this.txt_message.CustomButton.Size = new System.Drawing.Size(37, 37);
+            this.txt_message.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_message.CustomButton.TabIndex = 1;
+            this.txt_message.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_message.CustomButton.UseSelectable = true;
+            this.txt_message.CustomButton.Visible = false;
+            this.txt_message.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_message.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txt_message.Lines = new string[0];
+            this.txt_message.Location = new System.Drawing.Point(0, 0);
+            this.txt_message.MaxLength = 32767;
+            this.txt_message.Name = "txt_message";
+            this.txt_message.PasswordChar = '\0';
+            this.txt_message.PromptText = "Write message here...";
+            this.txt_message.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_message.SelectedText = "";
+            this.txt_message.SelectionLength = 0;
+            this.txt_message.SelectionStart = 0;
+            this.txt_message.ShortcutsEnabled = true;
+            this.txt_message.Size = new System.Drawing.Size(445, 42);
+            this.txt_message.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_message.TabIndex = 0;
+            this.txt_message.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txt_message.UseSelectable = true;
+            this.txt_message.WaterMark = "Write message here...";
+            this.txt_message.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_message.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // panel_details
             // 
@@ -329,63 +343,129 @@
             // 
             // panel_top
             // 
-            this.panel_top.Controls.Add(this.label4);
+            this.panel_top.Controls.Add(this.lbl_to);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.Location = new System.Drawing.Point(203, 0);
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(685, 36);
+            this.panel_top.Size = new System.Drawing.Size(340, 36);
             this.panel_top.TabIndex = 14;
             // 
-            // label4
+            // lbl_to
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(16, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Chat";
+            this.lbl_to.AutoSize = true;
+            this.lbl_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbl_to.ForeColor = System.Drawing.Color.White;
+            this.lbl_to.Location = new System.Drawing.Point(16, 10);
+            this.lbl_to.Name = "lbl_to";
+            this.lbl_to.Size = new System.Drawing.Size(40, 17);
+            this.lbl_to.TabIndex = 11;
+            this.lbl_to.Text = "From";
+            // 
+            // splitContainer
+            // 
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(203, 0);
+            this.splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(this.panel_top);
+            this.splitContainer.Panel1.Controls.Add(this.data_in);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.panel1);
+            this.splitContainer.Panel2.Controls.Add(this.data_out);
+            this.splitContainer.Size = new System.Drawing.Size(685, 461);
+            this.splitContainer.SplitterDistance = 340;
+            this.splitContainer.TabIndex = 15;
+            // 
+            // data_out
+            // 
+            this.data_out.AllowUserToAddRows = false;
+            this.data_out.AllowUserToDeleteRows = false;
+            this.data_out.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.data_out.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.data_out.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.data_out.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_out.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_out.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_out.Location = new System.Drawing.Point(0, 0);
+            this.data_out.Name = "data_out";
+            this.data_out.ReadOnly = true;
+            this.data_out.ShowEditingIcon = false;
+            this.data_out.Size = new System.Drawing.Size(341, 461);
+            this.data_out.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_from);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(341, 36);
+            this.panel1.TabIndex = 15;
+            // 
+            // lbl_from
+            // 
+            this.lbl_from.AutoSize = true;
+            this.lbl_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbl_from.ForeColor = System.Drawing.Color.White;
+            this.lbl_from.Location = new System.Drawing.Point(16, 10);
+            this.lbl_from.Name = "lbl_from";
+            this.lbl_from.Size = new System.Drawing.Size(40, 17);
+            this.lbl_from.TabIndex = 11;
+            this.lbl_from.Text = "From";
             // 
             // Messages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.Controls.Add(this.data_texts);
-            this.Controls.Add(this.panel_top);
+            this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_details);
             this.Name = "Messages";
             this.Size = new System.Drawing.Size(888, 503);
-            ((System.ComponentModel.ISupportInitialize)(this.data_texts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_in)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_messages)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel_details.ResumeLayout(false);
             this.panel_details.PerformLayout();
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data_out)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.DataGridView data_texts;
+        public System.Windows.Forms.DataGridView data_in;
         public System.Windows.Forms.DataGridView data_messages;
         private MetroFramework.Controls.MetroTextBox txt_from;
         private MetroFramework.Controls.MetroTextBox txt_to;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_comment;
+        private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Panel panel2;
-        private MetroFramework.Controls.MetroTextBox txt_text;
+        private MetroFramework.Controls.MetroTextBox txt_message;
         private System.Windows.Forms.Panel panel_details;
         private MetroFramework.Controls.MetroTextBox txt_date;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_top;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_to;
+        private System.Windows.Forms.SplitContainer splitContainer;
+        public System.Windows.Forms.DataGridView data_out;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_from;
     }
 }

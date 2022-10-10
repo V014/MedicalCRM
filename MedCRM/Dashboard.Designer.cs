@@ -46,12 +46,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_messages = new System.Windows.Forms.Label();
             this.label_messages_title = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chart_patients = new LiveCharts.WinForms.CartesianChart();
             this.panel_appointments.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_dashboard.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_appointments
@@ -91,7 +94,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.panel1.Controls.Add(this.lbl_reminders);
             this.panel1.Controls.Add(this.lbl_remindes_title);
-            this.panel1.Location = new System.Drawing.Point(3, 189);
+            this.panel1.Location = new System.Drawing.Point(741, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 180);
             this.panel1.TabIndex = 0;
@@ -123,7 +126,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.panel2.Controls.Add(this.lbl_forum);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(249, 189);
+            this.panel2.Location = new System.Drawing.Point(3, 189);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 180);
             this.panel2.TabIndex = 0;
@@ -159,10 +162,11 @@
             this.panel_dashboard.Controls.Add(this.panel1);
             this.panel_dashboard.Controls.Add(this.panel2);
             this.panel_dashboard.Controls.Add(this.panel3);
+            this.panel_dashboard.Controls.Add(this.panel5);
             this.panel_dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_dashboard.Location = new System.Drawing.Point(0, 0);
             this.panel_dashboard.Name = "panel_dashboard";
-            this.panel_dashboard.Size = new System.Drawing.Size(741, 400);
+            this.panel_dashboard.Size = new System.Drawing.Size(992, 564);
             this.panel_dashboard.TabIndex = 1;
             // 
             // panel4
@@ -226,7 +230,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.panel3.Controls.Add(this.label_messages);
             this.panel3.Controls.Add(this.label_messages_title);
-            this.panel3.Location = new System.Drawing.Point(495, 189);
+            this.panel3.Location = new System.Drawing.Point(249, 189);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 180);
             this.panel3.TabIndex = 0;
@@ -253,6 +257,24 @@
             this.label_messages_title.TabIndex = 0;
             this.label_messages_title.Text = "Messages";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel5.Controls.Add(this.chart_patients);
+            this.panel5.Location = new System.Drawing.Point(495, 189);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(240, 180);
+            this.panel5.TabIndex = 2;
+            // 
+            // chart_patients
+            // 
+            this.chart_patients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chart_patients.Location = new System.Drawing.Point(0, 0);
+            this.chart_patients.Name = "chart_patients";
+            this.chart_patients.Size = new System.Drawing.Size(240, 180);
+            this.chart_patients.TabIndex = 0;
+            this.chart_patients.Text = "cartesianChart1";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +282,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel_dashboard);
             this.Name = "Dashboard";
-            this.Size = new System.Drawing.Size(741, 400);
+            this.Size = new System.Drawing.Size(992, 564);
             this.panel_appointments.ResumeLayout(false);
             this.panel_appointments.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -272,6 +294,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,5 +319,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Panel panel5;
+        private LiveCharts.WinForms.CartesianChart chart_patients;
     }
 }

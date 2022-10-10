@@ -44,7 +44,7 @@ namespace MedCRM
         {
             string comment = txt_comment.Text;
             int id = utils.userID;
-            string name = con.ReadString("SELECT name FROM session WHERE id = 1");
+            string name = con.ReadString("SELECT Name FROM session WHERE id = 1");
             
             if (!string.IsNullOrEmpty(comment))
             {

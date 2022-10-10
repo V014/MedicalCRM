@@ -4,8 +4,8 @@
     {
         Connection con = new Connection();
         // stores user ID during a session
-        public int userID;
-        public string username;
+        public int userID = 0;
+        public string username = "";
         // counts the reminders
         public string countReminders()
         {
@@ -30,5 +30,12 @@
             string number = con.ReadString("SELECT COUNT(ID) FROM patients");
             return number;
         }
+        /*
+        public int[] chartPatients()
+        {
+            int[] chart = con.dataTable("SELECT * FROM patients");
+            return chart[];
+        }
+        */
     }
 }

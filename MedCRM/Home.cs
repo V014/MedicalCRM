@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace MedCRM
@@ -15,8 +16,7 @@ namespace MedCRM
         utils utils = new utils();
         Forum forum = new Forum();
         StyleDataGrid stye = new StyleDataGrid();
-        string name;
-        int id;
+        string identity = WindowsIdentity.GetCurrent().Name;
         public Home()
         {
             InitializeComponent();
@@ -38,11 +38,19 @@ namespace MedCRM
             dashboard.lbl_reminders.Text = utils.countReminders();
             dashboard.lbl_forum.Text = utils.countForum();
             dashboard.lbl_patients.Text = utils.countPatients();
-            name = utils.username;
-            id = utils.userID;
-            //id = int.Parse(con.ReadString($"SELECT ID FROM session WHERE status = 'online'"));
-            //name = con.ReadString($"SELECT Name FROM session WHERE ID = {id}");
-            dashboard.lbl_name.Text = name;
+            dashboard.lbl_name.Text = loadUsername();
+        }
+        // load userID
+        private string loadUserID()
+        {
+            string id = con.ReadString($"SELECT UserID FROM session WHERE identity = '{identity}'");
+            return id;
+        }
+        // load username
+        private string loadUsername()
+        {
+            string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}'");
+            return name;
         }
         // loads patients
         private void loadPatients()
@@ -117,7 +125,7 @@ namespace MedCRM
             this.panel_main.Controls.Add(messages);
             messages.Dock = DockStyle.Fill;
             messages.Show();
-            con.LoadData($"SELECT `ID`, `From`, `To`,`Date` FROM messages WHERE `To` = '{name}'", messages.data_messages);
+            con.LoadData($"SELECT `ID`, `From`, `To`,`Date` FROM messages WHERE `To` = '{loadUsername()}'", messages.data_messages);
             messages.data_messages.Columns[0].Visible = false;
             // messages.data_messages.Columns[1].Visible = false;
             messages.data_messages.Columns[2].Visible = false;
@@ -171,7 +179,7 @@ namespace MedCRM
         // closes the whole application
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            con.ExecuteQuery($"UPDATE session SET UserID = 0, Name = '', status = 'offline' WHERE ID = 1");
+            con.ExecuteQuery($"UPDATE session SET status = 'offline' WHERE identity = '{identity}'");
             Application.Exit();
         }
     }

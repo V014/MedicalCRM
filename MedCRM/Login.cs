@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace MedCRM
@@ -7,8 +8,8 @@ namespace MedCRM
     {
         Connection con = new Connection(); // link connection class
         Home home = new Home(); // link home page / Dashboard
-        utils utils = new utils(); // link utilities class
         string date = DateTime.Now.ToString("d"); // link date and time class
+        string identity = WindowsIdentity.GetCurrent().Name;
         public Login()
         {
             InitializeComponent();
@@ -25,10 +26,9 @@ namespace MedCRM
                 string result = con.ReadString($"SELECT ID FROM profile WHERE name = '{name}' AND password = '{password}'");
                 if (!string.IsNullOrEmpty(result))
                 {
+                    
                     int id = int.Parse(result);
-                    con.ExecuteQuery($"INSERT INTO session (UserID, status, name, date) VALUES( {id}, 'online', '{name}', '{date}')");
-                    utils.userID = id;
-                    utils.username = name;
+                    con.ExecuteQuery($"INSERT INTO session (UserID, name, status, identity, date) VALUES( {id}, '{name}', 'online', '{identity}', '{date}')");
                     this.Hide();
                     home.Show();
                 }
@@ -39,7 +39,7 @@ namespace MedCRM
             }
             catch (Exception)
             {
-                MessageBox.Show("Error Message!", "Error!");
+                MessageBox.Show("The system is unavilable right now, please contact technical support!", "Error!");
             }
             
         }
