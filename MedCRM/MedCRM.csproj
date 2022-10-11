@@ -113,11 +113,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Messages.cs">
+    <Compile Include="Chats.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Messages.Designer.cs">
-      <DependentUpon>Messages.cs</DependentUpon>
+    <Compile Include="Chats.Designer.cs">
+      <DependentUpon>Chats.cs</DependentUpon>
     </Compile>
     <Compile Include="Patients.cs">
       <SubType>UserControl</SubType>
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Messages.resx">
-      <DependentUpon>Messages.cs</DependentUpon>
+    <EmbeddedResource Include="Chats.resx">
+      <DependentUpon>Chats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>

@@ -5,15 +5,16 @@ using System.Windows.Forms;
 
 namespace MedCRM
 {
-    public partial class Messages : UserControl
+    public partial class Chats : UserControl
     {
         Connection con = new Connection();
         StyleDataGrid style = new StyleDataGrid();
         utils utils = new utils();
         string date = DateTime.Now.ToString("d");
         string recipient;
+        string chatID;
         string identity = WindowsIdentity.GetCurrent().Name;
-        public Messages()
+        public Chats()
         {
             InitializeComponent();
         }
@@ -25,9 +26,9 @@ namespace MedCRM
                 con.LoadData($"SELECT Message FROM messages WHERE `From` = '{recipient}' AND `To` = '{loadUsername()}' ", data_in);
                 con.LoadData($"SELECT Message FROM messages WHERE `From` = '{loadUsername()}' AND `To` = '{recipient}' ", data_out);
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error Message!", "Error!");
+                MessageBox.Show(ex.ToString(), "Error!");
             }
         }
         // load UserID
@@ -42,19 +43,6 @@ namespace MedCRM
             string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}'");
             return name;
         }
-        private void data_messages_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = data_messages.Rows[e.RowIndex];
-            txt_from.Text = row.Cells[1].Value.ToString();
-            txt_to.Text = row.Cells[2].Value.ToString();
-            txt_date.Text = row.Cells[3].Value.ToString();
-            
-            recipient = row.Cells[1].Value.ToString();
-            loadTexts();
-            style.styleChat(data_in);
-            style.styleChat(data_out);
-        }
-
         private void btn_send_Click(object sender, EventArgs e)
         {
             string message = txt_message.Text;
@@ -79,6 +67,19 @@ namespace MedCRM
             {
                 MessageBox.Show("Write comment first!", "Warning!");
             }
+        }
+
+        private void data_chats_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = data_chats.Rows[e.RowIndex];
+            txt_from.Text = row.Cells[1].Value.ToString();
+            txt_to.Text = row.Cells[2].Value.ToString();
+
+            recipient = row.Cells[1].Value.ToString();
+            chatID = row.Cells[0].Value.ToString();
+            loadTexts();
+            style.styleChat(data_in);
+            style.styleChat(data_out);
         }
     }
 }

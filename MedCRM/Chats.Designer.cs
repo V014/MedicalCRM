@@ -1,6 +1,6 @@
 ﻿namespace MedCRM
 {
-    partial class Messages
+    partial class Chats
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Messages));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chats));
             this.data_in = new System.Windows.Forms.DataGridView();
-            this.data_messages = new System.Windows.Forms.DataGridView();
+            this.data_chats = new System.Windows.Forms.DataGridView();
             this.txt_from = new MetroFramework.Controls.MetroTextBox();
             this.txt_to = new MetroFramework.Controls.MetroTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_from = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.data_in)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data_messages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_chats)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel_details.SuspendLayout();
             this.panel_top.SuspendLayout();
@@ -72,26 +72,26 @@
             this.data_in.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_in.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_in.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_in.Location = new System.Drawing.Point(0, 0);
+            this.data_in.Location = new System.Drawing.Point(0, 36);
             this.data_in.Name = "data_in";
             this.data_in.ReadOnly = true;
             this.data_in.ShowEditingIcon = false;
-            this.data_in.Size = new System.Drawing.Size(340, 461);
+            this.data_in.Size = new System.Drawing.Size(340, 425);
             this.data_in.TabIndex = 0;
             // 
-            // data_messages
+            // data_chats
             // 
-            this.data_messages.AllowUserToAddRows = false;
-            this.data_messages.AllowUserToDeleteRows = false;
-            this.data_messages.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.data_messages.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.data_messages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_messages.Location = new System.Drawing.Point(19, 236);
-            this.data_messages.Name = "data_messages";
-            this.data_messages.ReadOnly = true;
-            this.data_messages.Size = new System.Drawing.Size(165, 225);
-            this.data_messages.TabIndex = 14;
-            this.data_messages.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_messages_CellClick);
+            this.data_chats.AllowUserToAddRows = false;
+            this.data_chats.AllowUserToDeleteRows = false;
+            this.data_chats.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.data_chats.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_chats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_chats.Location = new System.Drawing.Point(19, 236);
+            this.data_chats.Name = "data_chats";
+            this.data_chats.ReadOnly = true;
+            this.data_chats.Size = new System.Drawing.Size(165, 225);
+            this.data_chats.TabIndex = 14;
+            this.data_chats.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_chats_CellClick);
             // 
             // txt_from
             // 
@@ -168,9 +168,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(16, 213);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 17);
+            this.label6.Size = new System.Drawing.Size(44, 17);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Inbox";
+            this.label6.Text = "Chats";
             // 
             // label3
             // 
@@ -282,7 +282,7 @@
             // 
             // panel_details
             // 
-            this.panel_details.Controls.Add(this.data_messages);
+            this.panel_details.Controls.Add(this.data_chats);
             this.panel_details.Controls.Add(this.txt_date);
             this.panel_details.Controls.Add(this.txt_from);
             this.panel_details.Controls.Add(this.txt_to);
@@ -369,13 +369,13 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.panel_top);
             this.splitContainer.Panel1.Controls.Add(this.data_in);
+            this.splitContainer.Panel1.Controls.Add(this.panel_top);
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.Controls.Add(this.panel1);
             this.splitContainer.Panel2.Controls.Add(this.data_out);
+            this.splitContainer.Panel2.Controls.Add(this.panel1);
             this.splitContainer.Size = new System.Drawing.Size(685, 461);
             this.splitContainer.SplitterDistance = 340;
             this.splitContainer.TabIndex = 15;
@@ -390,11 +390,11 @@
             this.data_out.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_out.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_out.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_out.Location = new System.Drawing.Point(0, 0);
+            this.data_out.Location = new System.Drawing.Point(0, 36);
             this.data_out.Name = "data_out";
             this.data_out.ReadOnly = true;
             this.data_out.ShowEditingIcon = false;
-            this.data_out.Size = new System.Drawing.Size(341, 461);
+            this.data_out.Size = new System.Drawing.Size(341, 425);
             this.data_out.TabIndex = 1;
             // 
             // panel1
@@ -417,7 +417,7 @@
             this.lbl_from.TabIndex = 11;
             this.lbl_from.Text = "From";
             // 
-            // Messages
+            // Chats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -425,10 +425,10 @@
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_details);
-            this.Name = "Messages";
+            this.Name = "Chats";
             this.Size = new System.Drawing.Size(888, 503);
             ((System.ComponentModel.ISupportInitialize)(this.data_in)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data_messages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_chats)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel_details.ResumeLayout(false);
             this.panel_details.PerformLayout();
@@ -448,7 +448,7 @@
         #endregion
 
         public System.Windows.Forms.DataGridView data_in;
-        public System.Windows.Forms.DataGridView data_messages;
+        public System.Windows.Forms.DataGridView data_chats;
         private MetroFramework.Controls.MetroTextBox txt_from;
         private MetroFramework.Controls.MetroTextBox txt_to;
         private System.Windows.Forms.Label label6;

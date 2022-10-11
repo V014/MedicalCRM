@@ -11,7 +11,7 @@ namespace MedCRM
         Patients patients = new Patients();
         Appointments appointments = new Appointments();
         Reminders reminders = new Reminders();
-        Messages messages = new Messages();
+        Chats chats = new Chats();
         Profile profile = new Profile();
         utils utils = new utils();
         Forum forum = new Forum();
@@ -21,7 +21,7 @@ namespace MedCRM
         {
             InitializeComponent();
         }
-
+        // things during runtime
         private void Home_Load(object sender, EventArgs e)
         {
             loadHome();
@@ -49,7 +49,7 @@ namespace MedCRM
         // load username
         private string loadUsername()
         {
-            string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}'");
+            string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}' AND status = 'online'");
             return name;
         }
         // loads patients
@@ -119,18 +119,17 @@ namespace MedCRM
             stye.style(forum.data_forum);
         }
         // loads messages
-        public void loadMessages()
+        public void loadChats()
         {
             this.panel_main.Controls.Clear();
-            this.panel_main.Controls.Add(messages);
-            messages.Dock = DockStyle.Fill;
-            messages.Show();
-            con.LoadData($"SELECT `ID`, `From`, `To`,`Date` FROM messages WHERE `To` = '{loadUsername()}'", messages.data_messages);
-            messages.data_messages.Columns[0].Visible = false;
+            this.panel_main.Controls.Add(chats);
+            chats.Dock = DockStyle.Fill;
+            chats.Show();
+            con.LoadData($"SELECT `ID`, `From`, `To` FROM chats WHERE `To` = '{loadUsername()}'", chats.data_chats);
+            chats.data_chats.Columns[0].Visible = false;
             // messages.data_messages.Columns[1].Visible = false;
-            messages.data_messages.Columns[2].Visible = false;
-            messages.data_messages.Columns[3].Visible = false;
-            stye.styleChat(messages.data_messages);
+            chats.data_chats.Columns[2].Visible = false;
+            stye.styleChat(chats.data_chats);
         }
         // loads user profile
         public void loadProfile()
@@ -166,11 +165,6 @@ namespace MedCRM
         {
             loadForum();
         }
-        // opens messages page
-        private void btn_messages_Click(object sender, EventArgs e)
-        {
-            loadMessages();
-        }
         // opens profile page
         private void btn_profile_Click(object sender, EventArgs e)
         {
@@ -181,6 +175,11 @@ namespace MedCRM
         {
             con.ExecuteQuery($"UPDATE session SET status = 'offline' WHERE identity = '{identity}'");
             Application.Exit();
+        }
+        // load chats
+        private void btn_chats_Click(object sender, EventArgs e)
+        {
+            loadChats();
         }
     }
 }

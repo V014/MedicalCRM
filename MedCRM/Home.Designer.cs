@@ -33,7 +33,7 @@
             this.btn_profile = new System.Windows.Forms.Button();
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_payments = new System.Windows.Forms.Button();
-            this.btn_messages = new System.Windows.Forms.Button();
+            this.btn_chats = new System.Windows.Forms.Button();
             this.btn_forum = new System.Windows.Forms.Button();
             this.btn_reminders = new System.Windows.Forms.Button();
             this.btn_appointments = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.panel_nav.Controls.Add(this.btn_profile);
             this.panel_nav.Controls.Add(this.btn_staff);
             this.panel_nav.Controls.Add(this.btn_payments);
-            this.panel_nav.Controls.Add(this.btn_messages);
+            this.panel_nav.Controls.Add(this.btn_chats);
             this.panel_nav.Controls.Add(this.btn_forum);
             this.panel_nav.Controls.Add(this.btn_reminders);
             this.panel_nav.Controls.Add(this.btn_appointments);
@@ -109,22 +109,22 @@
             this.btn_payments.Text = "Payments";
             this.btn_payments.UseVisualStyleBackColor = false;
             // 
-            // btn_messages
+            // btn_chats
             // 
-            this.btn_messages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btn_messages.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_messages.FlatAppearance.BorderSize = 0;
-            this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_messages.ForeColor = System.Drawing.Color.White;
-            this.btn_messages.Image = ((System.Drawing.Image)(resources.GetObject("btn_messages.Image")));
-            this.btn_messages.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_messages.Location = new System.Drawing.Point(0, 250);
-            this.btn_messages.Name = "btn_messages";
-            this.btn_messages.Size = new System.Drawing.Size(160, 50);
-            this.btn_messages.TabIndex = 5;
-            this.btn_messages.Text = "Messages";
-            this.btn_messages.UseVisualStyleBackColor = false;
-            this.btn_messages.Click += new System.EventHandler(this.btn_messages_Click);
+            this.btn_chats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btn_chats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_chats.FlatAppearance.BorderSize = 0;
+            this.btn_chats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chats.ForeColor = System.Drawing.Color.White;
+            this.btn_chats.Image = ((System.Drawing.Image)(resources.GetObject("btn_chats.Image")));
+            this.btn_chats.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_chats.Location = new System.Drawing.Point(0, 250);
+            this.btn_chats.Name = "btn_chats";
+            this.btn_chats.Size = new System.Drawing.Size(160, 50);
+            this.btn_chats.TabIndex = 5;
+            this.btn_chats.Text = "Chats";
+            this.btn_chats.UseVisualStyleBackColor = false;
+            this.btn_chats.Click += new System.EventHandler(this.btn_chats_Click);
             // 
             // btn_forum
             // 
@@ -243,7 +243,7 @@
 
         private System.Windows.Forms.Panel panel_nav;
         private System.Windows.Forms.Button btn_payments;
-        private System.Windows.Forms.Button btn_messages;
+        private System.Windows.Forms.Button btn_chats;
         private System.Windows.Forms.Button btn_forum;
         private System.Windows.Forms.Button btn_reminders;
         private System.Windows.Forms.Button btn_appointments;
