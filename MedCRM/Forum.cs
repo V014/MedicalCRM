@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Media;
+using System.Security.Principal;
 
 namespace MedCRM
 {
@@ -10,6 +11,8 @@ namespace MedCRM
         string date = DateTime.Now.ToString("d");
         utils utils = new utils();
         StyleDataGrid style = new StyleDataGrid();
+        string identity = WindowsIdentity.GetCurrent().Name;
+
         public Forum()
         {
             InitializeComponent();
@@ -44,7 +47,7 @@ namespace MedCRM
         {
             string comment = txt_comment.Text;
             int id = utils.userID;
-            string name = con.ReadString("SELECT Name FROM session WHERE id = 1");
+            string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}'");
             
             if (!string.IsNullOrEmpty(comment))
             {

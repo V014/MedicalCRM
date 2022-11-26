@@ -23,8 +23,10 @@ namespace MedCRM
         {
             try
             {
-                con.LoadData($"SELECT Message FROM messages WHERE `From` = '{recipient}' AND `To` = '{loadUsername()}' ", data_in);
-                con.LoadData($"SELECT Message FROM messages WHERE `From` = '{loadUsername()}' AND `To` = '{recipient}' ", data_out);
+                
+                con.LoadData($"SELECT Message FROM messages AS m INNER JOIN chats AS c ON c.ID = m.ChatID WHERE `ChatID` = '{chatID}' AND `From` = '{Username()}'", data_out);
+                
+                con.LoadData($"SELECT Message FROM messages AS m INNER JOIN chats AS c ON c.ID = m.ChatID WHERE `ChatID` = '{chatID}' AND `To` = '{recipient }'", data_in);
             }
             catch(Exception ex)
             {
@@ -37,12 +39,14 @@ namespace MedCRM
             int id = int.Parse(con.ReadString($"SELECT UserID FROM session WHERE identity = '{identity}'"));
             return id;
         }
+        
         // load username
-        private string loadUsername()
+        private string Username()
         {
-            string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}'");
+            string name = con.ReadString($"SELECT name FROM profile WHERE ID = '{chatID}'");
             return name;
         }
+        
         private void btn_send_Click(object sender, EventArgs e)
         {
             string message = txt_message.Text;
@@ -51,7 +55,7 @@ namespace MedCRM
             {
                 try
                 {
-                    con.ExecuteQuery($"INSERT INTO messages (`From`, `To`, `Message`, `Date`) VALUES('{loadUsername()}', '{recipient}', '{message}', '{date}')");
+                    con.ExecuteQuery($"INSERT INTO messages (`ChatID`, `Message`, `Date`) VALUES('{chatID}', '{message}', '{date}')");
                     loadTexts();
                     txt_message.Clear();
                     // play chime
@@ -78,8 +82,8 @@ namespace MedCRM
             recipient = row.Cells[1].Value.ToString();
             chatID = row.Cells[0].Value.ToString();
             loadTexts();
-            style.styleChat(data_in);
             style.styleChat(data_out);
+            style.styleChat(data_in);
         }
     }
 }

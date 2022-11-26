@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chats));
-            this.data_in = new System.Windows.Forms.DataGridView();
+            this.data_out = new System.Windows.Forms.DataGridView();
             this.data_chats = new System.Windows.Forms.DataGridView();
             this.txt_from = new MetroFramework.Controls.MetroTextBox();
             this.txt_to = new MetroFramework.Controls.MetroTextBox();
@@ -46,10 +46,10 @@
             this.panel_top = new System.Windows.Forms.Panel();
             this.lbl_to = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.data_out = new System.Windows.Forms.DataGridView();
+            this.data_in = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_from = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.data_in)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_out)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_chats)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel_details.SuspendLayout();
@@ -58,26 +58,27 @@
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_out)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_in)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // data_in
+            // data_out
             // 
-            this.data_in.AllowUserToAddRows = false;
-            this.data_in.AllowUserToDeleteRows = false;
-            this.data_in.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.data_in.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.data_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.data_in.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.data_in.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_in.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_in.Location = new System.Drawing.Point(0, 36);
-            this.data_in.Name = "data_in";
-            this.data_in.ReadOnly = true;
-            this.data_in.ShowEditingIcon = false;
-            this.data_in.Size = new System.Drawing.Size(340, 425);
-            this.data_in.TabIndex = 0;
+            this.data_out.AllowUserToAddRows = false;
+            this.data_out.AllowUserToDeleteRows = false;
+            this.data_out.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.data_out.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.data_out.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.data_out.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_out.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_out.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_out.Location = new System.Drawing.Point(0, 36);
+            this.data_out.Name = "data_out";
+            this.data_out.ReadOnly = true;
+            this.data_out.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data_out.ShowEditingIcon = false;
+            this.data_out.Size = new System.Drawing.Size(332, 425);
+            this.data_out.TabIndex = 0;
             // 
             // data_chats
             // 
@@ -347,7 +348,7 @@
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(340, 36);
+            this.panel_top.Size = new System.Drawing.Size(332, 36);
             this.panel_top.TabIndex = 14;
             // 
             // lbl_to
@@ -357,45 +358,47 @@
             this.lbl_to.ForeColor = System.Drawing.Color.White;
             this.lbl_to.Location = new System.Drawing.Point(16, 10);
             this.lbl_to.Name = "lbl_to";
-            this.lbl_to.Size = new System.Drawing.Size(40, 17);
+            this.lbl_to.Size = new System.Drawing.Size(66, 17);
             this.lbl_to.TabIndex = 11;
-            this.lbl_to.Text = "From";
+            this.lbl_to.Text = "Outgoing";
             // 
             // splitContainer
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.IsSplitterFixed = true;
             this.splitContainer.Location = new System.Drawing.Point(203, 0);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.data_in);
+            this.splitContainer.Panel1.Controls.Add(this.data_out);
             this.splitContainer.Panel1.Controls.Add(this.panel_top);
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.Controls.Add(this.data_out);
+            this.splitContainer.Panel2.Controls.Add(this.data_in);
             this.splitContainer.Panel2.Controls.Add(this.panel1);
             this.splitContainer.Size = new System.Drawing.Size(685, 461);
-            this.splitContainer.SplitterDistance = 340;
+            this.splitContainer.SplitterDistance = 332;
             this.splitContainer.TabIndex = 15;
             // 
-            // data_out
+            // data_in
             // 
-            this.data_out.AllowUserToAddRows = false;
-            this.data_out.AllowUserToDeleteRows = false;
-            this.data_out.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.data_out.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.data_out.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.data_out.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.data_out.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_out.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_out.Location = new System.Drawing.Point(0, 36);
-            this.data_out.Name = "data_out";
-            this.data_out.ReadOnly = true;
-            this.data_out.ShowEditingIcon = false;
-            this.data_out.Size = new System.Drawing.Size(341, 425);
-            this.data_out.TabIndex = 1;
+            this.data_in.AllowUserToAddRows = false;
+            this.data_in.AllowUserToDeleteRows = false;
+            this.data_in.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.data_in.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.data_in.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.data_in.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_in.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_in.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_in.Location = new System.Drawing.Point(0, 36);
+            this.data_in.Name = "data_in";
+            this.data_in.ReadOnly = true;
+            this.data_in.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data_in.ShowEditingIcon = false;
+            this.data_in.Size = new System.Drawing.Size(349, 425);
+            this.data_in.TabIndex = 1;
             // 
             // panel1
             // 
@@ -403,7 +406,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 36);
+            this.panel1.Size = new System.Drawing.Size(349, 36);
             this.panel1.TabIndex = 15;
             // 
             // lbl_from
@@ -413,9 +416,9 @@
             this.lbl_from.ForeColor = System.Drawing.Color.White;
             this.lbl_from.Location = new System.Drawing.Point(16, 10);
             this.lbl_from.Name = "lbl_from";
-            this.lbl_from.Size = new System.Drawing.Size(40, 17);
+            this.lbl_from.Size = new System.Drawing.Size(64, 17);
             this.lbl_from.TabIndex = 11;
-            this.lbl_from.Text = "From";
+            this.lbl_from.Text = "Incoming";
             // 
             // Chats
             // 
@@ -427,7 +430,7 @@
             this.Controls.Add(this.panel_details);
             this.Name = "Chats";
             this.Size = new System.Drawing.Size(888, 503);
-            ((System.ComponentModel.ISupportInitialize)(this.data_in)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_out)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_chats)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel_details.ResumeLayout(false);
@@ -438,7 +441,7 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.data_out)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_in)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -447,7 +450,7 @@
 
         #endregion
 
-        public System.Windows.Forms.DataGridView data_in;
+        public System.Windows.Forms.DataGridView data_out;
         public System.Windows.Forms.DataGridView data_chats;
         private MetroFramework.Controls.MetroTextBox txt_from;
         private MetroFramework.Controls.MetroTextBox txt_to;
@@ -464,7 +467,7 @@
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Label lbl_to;
         private System.Windows.Forms.SplitContainer splitContainer;
-        public System.Windows.Forms.DataGridView data_out;
+        public System.Windows.Forms.DataGridView data_in;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_from;
     }

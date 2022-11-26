@@ -17,18 +17,18 @@ namespace MedCRM
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            string name = txt_name.Text;
-            string password = txt_password.Text;
+            string pincode = txt_pincode.Text;
 
             // try to find matching credentials in the database
             try
             {
-                string result = con.ReadString($"SELECT ID FROM profile WHERE name = '{name}' AND password = '{password}'");
+                string result = con.ReadString($"SELECT ID, Name FROM profile WHERE pincode = '{pincode}'");
+                
                 if (!string.IsNullOrEmpty(result))
                 {
                     
                     int id = int.Parse(result);
-                    con.ExecuteQuery($"INSERT INTO session (UserID, name, status, identity, date) VALUES( {id}, '{name}', 'online', '{identity}', '{date}')");
+                    con.ExecuteQuery($"INSERT INTO session (UserID, status, identity, date) VALUES( {id}, 'online', '{identity}', '{date}')");
                     this.Hide();
                     home.Show();
                 }
@@ -36,10 +36,11 @@ namespace MedCRM
                 {
                     MessageBox.Show("Your credentials are incorrect!");
                 }
+                
             }
             catch (Exception)
             {
-                MessageBox.Show("The system is unavilable right now, please contact technical support!", "Error!");
+                MessageBox.Show("The system is unavilable right now, please contact technical support!", "Assistant!");
             }
             
         }

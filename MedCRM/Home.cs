@@ -34,22 +34,27 @@ namespace MedCRM
             dashboard.Dock = DockStyle.Fill;
             dashboard.AutoSize = true;
             dashboard.Show();
+            // count appointments
             dashboard.lbl_appointments.Text = utils.countAppointments();
+            // count reminders
             dashboard.lbl_reminders.Text = utils.countReminders();
+            // count forum messages
             dashboard.lbl_forum.Text = utils.countForum();
+            // count patients
             dashboard.lbl_patients.Text = utils.countPatients();
+            // pull username
             dashboard.lbl_name.Text = loadUsername();
         }
         // load userID
-        private string loadUserID()
+        private string UserID()
         {
-            string id = con.ReadString($"SELECT UserID FROM session WHERE identity = '{identity}'");
-            return id;
+            string UserID = con.ReadString($"SELECT UserID FROM session WHERE identity = '{identity}' AND status = 'online'");
+            return UserID;
         }
         // load username
         private string loadUsername()
         {
-            string name = con.ReadString($"SELECT Name FROM session WHERE identity = '{identity}' AND status = 'online'");
+            string name = con.ReadString($"SELECT Name FROM profile WHERE ID = '{UserID()}'");
             return name;
         }
         // loads patients
@@ -125,10 +130,9 @@ namespace MedCRM
             this.panel_main.Controls.Add(chats);
             chats.Dock = DockStyle.Fill;
             chats.Show();
-            con.LoadData($"SELECT `ID`, `From`, `To` FROM chats WHERE `To` = '{loadUsername()}'", chats.data_chats);
+            con.LoadData($"SELECT `ID`, `From`, `To` FROM chats WHERE `To` = '{loadUsername()}' OR `From` = '{loadUsername()}'", chats.data_chats);
             chats.data_chats.Columns[0].Visible = false;
-            // messages.data_messages.Columns[1].Visible = false;
-            chats.data_chats.Columns[2].Visible = false;
+            chats.data_chats.Columns[1].Visible = false;
             stye.styleChat(chats.data_chats);
         }
         // loads user profile
